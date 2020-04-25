@@ -1,4 +1,5 @@
-# 'bitcoin-node' Docker Image
+# Build `ivannikovdev/bitcoin-node` Docker image
+
 
 ## JSON-RPC Interface
 > [JSON-RPC Interface](https://github.com/bitcoin/bitcoin/blob/master/doc/JSON-RPC-interface.md).
@@ -29,23 +30,23 @@ or
 
 
 ## Usage
-
-### Clone and building docker image
 ```bash
 git clone https://github.com/an-ivannikov-dev/bitcoin-node
 
 cd bitcoin-node/docker
 docker build --no-cache --tag ivannikovdev/bitcoin-node .
-```
-
-### docker run
-```bash
 docker run ivannikovdev/bitcoin-node bitcoind -help
+#docker volume create --name=btc_node_data_volume
+docker-compose up -d
 ```
 
-### docker-compose.yml
+## Building Docker Image
+
 ```bash
-#docker volume create --name=bitcoin_node_data_volume
-docker-compose up -d
-#ls bitcoin_node_data_volume
+VERSION=0.19.1
+
+docker build --no-cache --tag ivannikovdev/bitcoin-node:v$VERSION .
+docker tag ivannikovdev/bitcoin-node:v$VERSION ivannikovdev/bitcoin-node:latest
+docker push ivannikovdev/bitcoin-node:v$VERSION
+docker push ivannikovdev/bitcoin-node:latest
 ```

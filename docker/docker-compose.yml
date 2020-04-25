@@ -1,0 +1,37 @@
+version: "3"
+
+services:
+  bitcoin_node:
+    build:
+      context: .
+    image: ivannikovdev/bitcoin-node
+    command: bitcoind -datadir=/data
+    hostname: bitcoin_node
+    ports:
+      # mainnet <port, rpcport>
+      - 8333:8333
+      - 8332:8332
+      # testnet
+      - 18333:18333
+      - 18332:18332
+      # regtest
+      - 18444:18444
+      - 18443:18443
+    expose:
+      # mainnet
+      - "8333"
+      - "8332"
+      # testnet
+      - "18333"
+      - "18332"
+      # regtest
+      - "18444"
+      - "18443"
+    volumes:
+      #- bitcoin_node_data_volume:/data
+      - ./bitcoin_node_data_volume:/data
+      #- ./bitcoin.conf:/data/bitcoin.conf
+
+#volumes:
+#  bitcoin_node_data_volume:
+#    external: true
