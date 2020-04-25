@@ -1,4 +1,4 @@
-# 'bitcoin-node' Docker Image
+# 'ivannikovdev/bitcoin-node' Docker Image
 
 ## JSON-RPC Interface
 > [JSON-RPC Interface](https://github.com/bitcoin/bitcoin/blob/master/doc/JSON-RPC-interface.md).
