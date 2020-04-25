@@ -11,7 +11,7 @@ The REST API can be enabled with the -rest option.
 
 
 ## Executables
-> [bitcoin-core-0.19.1](https://bitcoincore.org/bin/bitcoin-core-0.19.1/bitcoin-0.19.1-x86_64-linux-gnu.tar.gz)
+> [bitcoin-core-0.19.1](https://bitcoincore.org/bin/bitcoin-core-0.19.1)
 
 Executables in `/usr/opt/bitcoin/0.19.1/bin/*`:
 - bitcoin-cli;
