@@ -32,7 +32,7 @@ or
 
 ### Clone and building docker image
 ```bash
-git clone https://github.com/an-ivannikov-dev/bitcoin-node
+git clone https://github.com/an-ivannikov-dev/docker-image-bitcoin-node bitcoin-node
 
 cd bitcoin-node
 docker build --no-cache --tag ivannikovdev/bitcoin-node .
