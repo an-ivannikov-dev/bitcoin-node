@@ -54,10 +54,10 @@ docker-compose up -d
 ## Building Docker Image
 
 ```bash
-VERSION=0.19.1
+TAG=0.19.1
 
-docker build --no-cache --tag ivannikovdev/bitcoin-node:v$VERSION .
-docker tag ivannikovdev/bitcoin-node:v$VERSION ivannikovdev/bitcoin-node:latest
-docker push ivannikovdev/bitcoin-node:v$VERSION
+docker build --no-cache --tag ivannikovdev/bitcoin-node:v$TAG .
+docker tag ivannikovdev/bitcoin-node:v$TAG ivannikovdev/bitcoin-node:latest
+docker push ivannikovdev/bitcoin-node:v$TAG
 docker push ivannikovdev/bitcoin-node:latest
 ```

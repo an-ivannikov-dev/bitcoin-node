@@ -2,8 +2,8 @@
 
 set -eo pipefail
 
-RELEASE=0.19.1
-LINK=https://bitcoincore.org/bin/bitcoin-core-$RELEASE/bitcoin-$RELEASE-x86_64-linux-gnu.tar.gz
+VERSION=${VERSION:-0.19.1}
+LINK=https://bitcoincore.org/bin/bitcoin-core-$VERSION/bitcoin-$VERSION-x86_64-linux-gnu.tar.gz
 
 apt-get update
 DEBIAN_FRONTEND=noninteractive apt-get -y install \
@@ -12,21 +12,21 @@ rm -rf /var/lib/apt/lists/*
 
 # /root/.bitcoin
 mkdir -p ~/.bitcoin
-mkdir -p /usr/opt/bitcoin/$RELEASE
+mkdir -p /usr/opt/bitcoin/$VERSION
 
 
 wget $LINK
-tar xvf bitcoin-$RELEASE-x86_64-linux-gnu.tar.gz
+tar xvf bitcoin-$VERSION-x86_64-linux-gnu.tar.gz
 
-cd bitcoin-$RELEASE
-cp -R ./* /usr/opt/bitcoin/$RELEASE
-cd .. && rm -Rf bitcoin-$RELEASE
+cd bitcoin-$VERSION
+cp -R ./* /usr/opt/bitcoin/$VERSION
+cd .. && rm -Rf bitcoin-$VERSION
 
 
 create_symlink() {
-   ln -sf ../opt/bitcoin/${RELEASE}/bin/$1 usr/bin/$2 || exit 1
+   ln -sf ../opt/bitcoin/${VERSION}/bin/$1 usr/bin/$2 || exit 1
 }
-for f in $(ls "/usr/opt/bitcoin/${RELEASE}/bin"); do
+for f in $(ls "/usr/opt/bitcoin/${VERSION}/bin"); do
    bn=$(basename $f)
    create_symlink $bn $bn
 done
