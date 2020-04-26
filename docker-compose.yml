@@ -28,10 +28,10 @@ services:
       - "18444"
       - "18443"
     volumes:
-      #- bitcoin_node_data_volume:/data
-      - ./bitcoin_node_data_volume:/data
+      #- bitcoin_node_volume:/data
+      - ./bitcoin_node_volume:/data
       #- ./bitcoin.conf:/data/bitcoin.conf
 
 #volumes:
-#  bitcoin_node_data_volume:
+#  bitcoin_node_volume:
 #    external: true
