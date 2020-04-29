@@ -4,19 +4,21 @@ services:
   bitcoin_node:
     build:
       context: .
-    image: ivannikovdev/bitcoin-node
+    #image: ivannikovdev/bitcoin-node
     command: bitcoind -datadir=/data
     hostname: bitcoin_node
     ports:
       # mainnet <port, rpcport>
-      - 8333:8333
-      - 8332:8332
-      # testnet
-      - 18333:18333
-      - 18332:18332
-      # regtest
-      - 18444:18444
-      - 18443:18443
+      - "8333:8333"
+      - "8332:8332"
+      # testnet <port, rpcport>
+      - "18333:18333"
+      - "18332:18332"
+      # regtest <port, rpcport>
+      - "18444:18444"
+      - "18443:18443"
+      # zmq
+      - "28332:28332"
     expose:
       # mainnet
       - "8333"
@@ -27,10 +29,12 @@ services:
       # regtest
       - "18444"
       - "18443"
+      # zmq
+      - "28332"
     volumes:
-      #- bitcoin_node_volume:/data
-      - ./bitcoin_node_volume:/data
-      #- ./bitcoin.conf:/data/bitcoin.conf
+      #- "bitcoin_node_volume:/data"
+      - "./bitcoin_node_volume:/data"
+      #- "./bitcoin.conf:/data/bitcoin.conf"
 
 #volumes:
 #  bitcoin_node_volume:

@@ -10,12 +10,8 @@ LABEL name="ivannikovdev/bitcoin-node:v$VERSION" version="$VERSION" \
 ADD ./install.sh /
 RUN chmod +x /install.sh && ./install.sh && rm /install.sh
 
-# mainnet <port, rpcport>
-EXPOSE 8333 8332
-# testnet
-EXPOSE 18333 18332
-# regtest
-EXPOSE 18444 18443
+# mainnet <port, rpcport>, testnet <port, rpcport>, regtest <port, rpcport>, zmq
+EXPOSE   8333 8332   18333 18332   18444 18443   28332
 
 VOLUME ["/data"]
 
