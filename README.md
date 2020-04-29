@@ -53,7 +53,6 @@ docker-compose up -d
 
 
 ## Building Docker Image
-
 ```bash
 TAG=0.19.1
 
