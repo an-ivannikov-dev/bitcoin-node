@@ -33,7 +33,7 @@ services:
       - "28332"
     volumes:
       #- "bitcoin_node_volume:/data"
-      - "./bitcoin_node_volume:/data"
+      - "./data/bitcoin_node:/data"
       #- "./bitcoin.conf:/data/bitcoin.conf"
 
 #volumes:

@@ -1,3 +1,3 @@
 .git/
-bitcoin_node_volume/
+data/
 .gitignore
