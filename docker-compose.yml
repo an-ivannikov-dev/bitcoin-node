@@ -4,7 +4,7 @@ services:
   bitcoin_node:
     build:
       context: .
-    #image: ivannikovdev/bitcoin-node
+    image: ivannikovdev/bitcoin-node
     command: bitcoind -datadir=/data
     hostname: bitcoin_node
     ports:
