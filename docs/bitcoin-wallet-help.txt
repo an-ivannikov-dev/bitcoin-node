@@ -1,0 +1,46 @@
+Bitcoin Core bitcoin-wallet version v0.19.1.0-g58ba7c314d552cea8cb024960a8504577aee586f
+
+wallet-tool is an offline tool for creating and interacting with Bitcoin Core wallet files.
+By default wallet-tool will act on wallets in the default mainnet wallet directory in the datadir.
+To change the target wallet, use the -datadir, -wallet and -testnet/-regtest arguments.
+
+Usage:
+  bitcoin-wallet [options] <command>
+
+Options:
+
+  -?
+       Print this help message and exit
+
+  -datadir=<dir>
+       Specify data directory
+
+  -wallet=<wallet-name>
+       Specify wallet name
+
+Debugging/Testing options:
+
+  -debug=<category>
+       Output debugging information (default: 0).
+
+  -printtoconsole
+       Send trace/debug info to console (default: 1 when no -debug is true, 0
+       otherwise).
+
+Chain selection options:
+
+  -chain=<chain>
+       Use the chain <chain> (default: main). Allowed values: main, test,
+       regtest
+
+  -testnet
+       Use the test chain. Equivalent to -chain=test.
+
+Commands:
+
+  create
+       Create new wallet file
+
+  info
+       Get wallet info
+
